@@ -2,6 +2,7 @@ package com.mysite.sbbmybatis.message;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,9 +18,10 @@ public class MessageController {
 	
 	// detail
 	@GetMapping("/{id}")
-	@ResponseBody
-	public Message getMessage(@PathVariable("id") Integer id) {
-		return messageService.getMessage(id);
+	public String getMessage(@PathVariable("id") Integer id, Model model) {
+		Message message = messageService.getMessage(id);
+		model.addAttribute("msg", message);
+		return "messageDetail";
 	}
 	
 
