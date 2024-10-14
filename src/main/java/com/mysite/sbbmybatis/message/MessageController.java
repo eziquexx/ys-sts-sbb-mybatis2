@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -32,10 +34,20 @@ public class MessageController {
 		return "messageList";
 	}
 
-	
 	@GetMapping("/api")
 	@ResponseBody
 	public List<Message> getMessagesLimit10() {
 		return messageService.getMessagesLimit10();
+	}
+	
+	// insert, create
+	@GetMapping("/create")
+	public String getMessageCreate() {
+		return "messageCreate";
+	}
+	@PostMapping("/create")
+	@ResponseBody
+	public void messageCreate(@RequestBody Message message) {
+		messageService.messageCreate(message);
 	}
 }

@@ -19,4 +19,8 @@ public class MessageService {
 	public List<Message> getMessagesLimit10() {
 		return messageMapper.getMessagesLimit10();
 	}
+	
+	public void messageCreate(Message message) {
+		messageMapper.insertMessage(message);
+	}
 }

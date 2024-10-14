@@ -10,4 +10,7 @@
 	<select id="getMessagesLimit10" resultType="com.mysite.sbbmybatis.dto.Message">
 		SELECT id, message FROM hello ORDER BY id DESC LIMIT 10;
 	</select>
+	<insert id="insertMessage" parameterType="com.mysite.sbbmybatis.dto.Message">
+		INSERT INTO hello (message) VALUES (#{message});
+	</insert>
 </mapper>

@@ -11,4 +11,5 @@ public interface MessageMapper {
 
 	Message getMessageById(Integer id);
 	List<Message> getMessagesLimit10();
+	void insertMessage(Message message);
 }

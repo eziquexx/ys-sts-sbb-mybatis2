@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Message Create</title>
+</head>
+<body>
+<h1>Message Create</h1>
+<a th:href="@{/messages}">message목록 이동</a>
+<form id="messageForm" th:action="@{/messages/create}" method="post">
+	<label for="message">Message: </label>
+	<input id="message_id" name="message" placeholder="message입력">
+	<button type="submit">전송</button>
+</form>
+
+<script th:src="@{/js/messageCreate-fetch.js}"></script>
+</body>
+</html>
