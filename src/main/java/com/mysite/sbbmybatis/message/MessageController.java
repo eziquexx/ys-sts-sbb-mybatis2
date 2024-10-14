@@ -1,5 +1,7 @@
 package com.mysite.sbbmybatis.message;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,5 +26,10 @@ public class MessageController {
 		return "messageDetail";
 	}
 	
-
+	// list
+	@GetMapping
+	@ResponseBody
+	public List<Message> getMessageList(Message message) {
+		return messageService.getMessageList(message);
+	}
 }

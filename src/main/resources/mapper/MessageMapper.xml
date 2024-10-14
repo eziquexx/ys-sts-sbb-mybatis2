@@ -7,4 +7,7 @@
 	<select id="getMessageById" resultType="com.mysite.sbbmybatis.dto.Message">
 		SELECT id, message FROM hello WHERE id = #{id};
 	</select>
+	<select id="getMessageList" resultType="com.mysite.sbbmybatis.dto.Message">
+		SELECT id, message FROM hello;
+	</select>
 </mapper>

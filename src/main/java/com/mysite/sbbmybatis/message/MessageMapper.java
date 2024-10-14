@@ -1,5 +1,7 @@
 package com.mysite.sbbmybatis.message;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.mysite.sbbmybatis.dto.Message;
@@ -8,4 +10,5 @@ import com.mysite.sbbmybatis.dto.Message;
 public interface MessageMapper {
 
 	Message getMessageById(Integer id);
+	List<Message> getMessageList(Message message);
 }

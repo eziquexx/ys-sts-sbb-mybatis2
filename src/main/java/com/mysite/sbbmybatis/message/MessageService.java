@@ -1,5 +1,7 @@
 package com.mysite.sbbmybatis.message;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,5 +14,9 @@ public class MessageService {
 	
 	public Message getMessage(Integer id) {
 		return messageMapper.getMessageById(id);
+	}
+	
+	public List<Message> getMessageList(Message message) {
+		return messageMapper.getMessageList(message);
 	}
 }
