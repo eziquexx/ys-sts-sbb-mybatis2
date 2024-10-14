@@ -16,7 +16,7 @@ public class MessageService {
 		return messageMapper.getMessageById(id);
 	}
 	
-	public List<Message> getMessageList(Message message) {
-		return messageMapper.getMessageList(message);
+	public List<Message> getMessagesLimit10() {
+		return messageMapper.getMessagesLimit10();
 	}
 }

@@ -28,8 +28,14 @@ public class MessageController {
 	
 	// list
 	@GetMapping
+	public String getMessageListView() {
+		return "messageList";
+	}
+
+	
+	@GetMapping("/api")
 	@ResponseBody
-	public List<Message> getMessageList(Message message) {
-		return messageService.getMessageList(message);
+	public List<Message> getMessagesLimit10() {
+		return messageService.getMessagesLimit10();
 	}
 }

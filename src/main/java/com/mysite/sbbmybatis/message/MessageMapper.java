@@ -10,5 +10,5 @@ import com.mysite.sbbmybatis.dto.Message;
 public interface MessageMapper {
 
 	Message getMessageById(Integer id);
-	List<Message> getMessageList(Message message);
+	List<Message> getMessagesLimit10();
 }
