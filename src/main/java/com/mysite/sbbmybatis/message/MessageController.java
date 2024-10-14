@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mysite.sbbmybatis.dto.Message;
+import com.mysite.sbbmybatis.dto.PageDTO;
 
 @Controller
 @RequestMapping("/messages")
@@ -30,7 +32,11 @@ public class MessageController {
 	
 	// list
 	@GetMapping
-	public String getMessageListView() {
+	public String getMessageListView(@RequestParam(name="page", defaultValue="1") int page, 
+			@RequestParam(name="size", defaultValue="10") int size,
+			Model model) {
+		PageDTO pageData = messageService.getPageData(page, size);
+		model.addAttribute("pageData", pageData);
 		return "messageList";
 	}
 
